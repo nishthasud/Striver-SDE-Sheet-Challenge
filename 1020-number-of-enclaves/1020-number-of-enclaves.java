@@ -20,7 +20,7 @@ class Solution {
         if(grid[0][i]==1 && vis[0][i]==0){
           
           dfs(0,i,r,c,grid,vis);
-          System.out.println("1st row");
+       //   System.out.println("1st row");
           }
          // dfs(0,i,r,c,grid,vis);
         
@@ -32,7 +32,7 @@ class Solution {
         if(grid[r-1][i]==1 && vis[r-1][i]==0)
         {
           dfs(r-1,i,r,c,grid,vis);
-          System.out.println("last row");
+       //   System.out.println("last row");
         }
         
       }
@@ -45,7 +45,7 @@ class Solution {
         if(grid[i][0]==1 && vis[i][0]==0)
         {
           dfs(i,0,r,c,grid,vis);
-          System.out.println("1st col");
+       //   System.out.println("1st col");
         }
         
       }
@@ -57,7 +57,7 @@ class Solution {
         if(grid[i][c-1]==1 && vis[i][c-1]==0)
         {
           dfs(i,c-1,r,c,grid,vis);
-          System.out.println("last col");
+       //   System.out.println("last col");
         }
         
       }
