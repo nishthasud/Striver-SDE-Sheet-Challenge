@@ -46,7 +46,7 @@ class Solution {
       while(!q.isEmpty())
       {
         int a=q.poll();
-        System.out.println("***"+a);
+      //  System.out.println("***"+a);
         count++;
         List<Integer> temp=new ArrayList<>();
         temp=adj.get(a);
@@ -58,7 +58,7 @@ class Solution {
         }
         
       }
-                      System.out.println(count);       
+                     // System.out.println(count);       
          if(count==numCourses)
                              return true;
                              else
