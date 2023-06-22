@@ -37,7 +37,7 @@ class Solution {
       Queue<Integer> q=new LinkedList<>();
       for(int i=0;i<numCourses;i++)
       {
-        System.out.println("Indegree"+i+indegree[i]);
+       // System.out.println("Indegree"+i+indegree[i]);
         if(indegree[i]==0)
         {
           q.add(i);
@@ -71,7 +71,7 @@ class Solution {
         }
         
       }
-                      System.out.println("count"+count);       
+                     // System.out.println("count"+count);       
          if(count==-1)
                              return ans;
                              else
