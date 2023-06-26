@@ -1,82 +1,81 @@
 class Solution {
     public int orangesRotting(int[][] grid) {
+        int r=grid.length;
+        int c=grid[0].length;
+        int vis[][]=new int[r][c];
       
-      int r=grid.length;
-      int c=grid[0].length;
+        for(int i=0;i<r;i++)
+        {
+          for(int j=0;j<c;j++)
+          {
+            vis[i][j]=0;
+            
+          }
+        }
       
-      Queue<triplet> q=new LinkedList<>();
-      int ans=0,cntfresh=0;int cnt=0;
+       int cntRotten=0;int cntFresh=0;
+       Queue<triplet> q=new LinkedList<>();
       
-      int vis[][]=new int[r][c];
       for(int i=0;i<r;i++)
       {
         for(int j=0;j<c;j++)
-          
         {
-          
-          if(grid[i][j]==2)
+          if(grid[i][j]==2 && vis[i][j]==0)
           {
-            vis[i][j]=2;
             q.add(new triplet(i,j,0));
+            cntRotten++;
+            vis[i][j]=1;
           }
           
-          else
-            vis[i][j]=0;
-          
-          if(grid[i][j]==1)
-            cntfresh++;
-          
+          else if(grid[i][j]==1)
+            cntFresh++;
+            
           
         }
       }
       
-      while(q.isEmpty()==false)
+      int ans=0;int fin=0;
+      while(!q.isEmpty())
       {
-        triplet t=q.poll();
-        int cr=t.x;
-        int cc=t.y;
-        int ct=t.t;
-        ans=Math.max(ans,ct);
-        int[] delRow={-1,0,1,0};
-        int[] delCol={0,1,0,-1};
+        triplet temp=q.poll();
+        fin++;
+        ans=Math.max(ans,temp.t);
+        
+        int delRow[]={-1,0,1,0};
+        int delCol[]={0,1,0,-1};
         for(int i=0;i<4;i++)
         {
-         // System.out.println("*****");
-          int nr=cr+delRow[i];
-          int nc=cc+delCol[i];
-          if((nr>=0)&&(nr<r)&&(nc>=0)&&(nc<c)&&(vis[nr][nc]!=2)&&(grid[nr][nc]==1))
+          int nr=temp.x+delRow[i];
+          int nc=temp.y+delCol[i];
+          if((nr>=0)&& (nr<r)&&(nc>=0)&& (nc<c)&& (grid[nr][nc]==1) && vis[nr][nc]==0)
           {
-            vis[nr][nc]=2;
-            cnt++;
-            grid[nr][nc]=2;
-         //   System.out.println("*****"+ct);
-            q.add(new triplet(nr,nc,ct+1));
+            vis[nr][nc]=1;
+            q.add(new triplet(nr,nc,temp.t+1));
+            
             
           }
           
         }
-        
       }
-      //System.out.println("&&&&"+cnt);
       
-      if(cnt!=cntfresh)
-        return -1;
-      else
+      
+      if(fin==cntFresh+cntRotten)
         return ans;
+      else
+        return -1;
+      
       
     }
-}
-
-class triplet
-{
-  int x;
-  int y;int t;
-  triplet(int x,int y,int t)
+  
+  class triplet
   {
-    this.x=x;
-    this.y=y;
-    this.t=t;
+    int x;int y;int t;
+    triplet(int x,int y,int t)
+    {
+      this.x=x;
+      this.y=y;
+      this.t=t;
+    }
     
   }
-  
 }
