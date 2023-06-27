@@ -1,70 +1,56 @@
 class Solution {
     public int[][] updateMatrix(int[][] mat) {
+        int r=mat.length;
+        int c=mat[0].length;
       
-      int r=mat.length;
-      int c=mat[0].length;
+       int ans[][]=new int[r][c];
+       int vis[][]=new int[r][c];
       
-      int dis[][]=new int[r][c];
-      int vis[][]=new int[r][c];
+       for(int i=0;i<r;i++)
+       {
+         for(int j=0;j<c;j++)
+         {
+           vis[i][j]=0;
+           
+         }
+       }
       
-      Queue<triplet> q=new LinkedList<>();
+      Queue<int[]> q=new LinkedList<>();
       
       for(int i=0;i<r;i++)
       {
         for(int j=0;j<c;j++)
         {
-          if(mat[i][j]==0)
+          if(vis[i][j]==0 && mat[i][j]==0)
           {
-            q.add(new triplet(i,j,0));
+            q.add(new int[]{i,j,0});
             vis[i][j]=1;
-            
+            ans[i][j]=0;
             
           }
-          
-          else
-            vis[i][j]=0;
           
         }
       }
       
       while(!q.isEmpty())
       {
-        triplet temp=q.poll();
-        dis[temp.x][temp.y]=temp.dist;
-        
+        int[] temp=q.poll();
         int delRow[]={-1,0,1,0};
         int delCol[]={0,1,0,-1};
-        
         for(int i=0;i<4;i++)
         {
-          int nr=temp.x+delRow[i];
-          int nc=temp.y+delCol[i];
-          if((nr>=0)&&(nr<r)&&(nc>=0)&&(nc<c)&&(vis[nr][nc]==0))
-             {
-               vis[nr][nc]=1;
-               dis[nr][nc]=temp.dist;
-               q.add(new triplet(nr,nc,temp.dist+1));
-               
-             }
-          
+          int nr=temp[0]+delRow[i];
+          int nc=temp[1]+delCol[i];
+          if((nr>=0) &&(nr<r)&& (nc>=0)&& (nc<c)&& vis[nr][nc]==0)
+          {
+            vis[nr][nc]=1;
+            ans[nr][nc]=temp[2]+1;
+            q.add(new int[]{nr,nc,temp[2]+1});
+          }
         }
         
       }
       
-      return dis;
-        
+      return ans;
     }
-}
-
-class triplet
-{
-  int x;int y;int dist;
-  triplet(int x,int y,int dist)
-  {
-    this.x=x;
-    this.y=y;
-    this.dist=dist;
-    
-  }
-  
 }
