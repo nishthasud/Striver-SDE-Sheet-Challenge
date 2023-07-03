@@ -28,7 +28,7 @@ class Solution {
         }
         
       }
-      System.out.println(adj);
+    //  System.out.println(adj);
       
       for(int i=0;i<graph.length;i++)
       {
