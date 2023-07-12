@@ -7,6 +7,8 @@ class Solution {
       Arrays.fill(inDegree,0);
       List<Integer> ans=new ArrayList<Integer>();
       
+      // creating adj list out of graph
+      
       for(int i=0;i<graph.length;i++)
       {
         adj.add(new ArrayList<>());
@@ -17,7 +19,8 @@ class Solution {
         adjRev.add(new ArrayList<>());
         
       }
-        
+      
+      //reversing the graph
         
       for(int i=0;i<graph.length;i++)
       {
@@ -28,7 +31,9 @@ class Solution {
         }
         
       }
-    //  System.out.println(adj);
+    //  Generic topo sort=graph bfs traversal
+      
+      
       
       for(int i=0;i<graph.length;i++)
       {
