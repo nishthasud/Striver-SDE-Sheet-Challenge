@@ -14,6 +14,9 @@ class Solution {
   
   void generate(List<List<Integer>> ans, List<Integer> temp, int k,int n, int arr[], int i,int sum)
   {
+    if (temp.size() > k) {
+            return;
+        }
     if(i==9)
     {
      // System.out.println("i="+i);
