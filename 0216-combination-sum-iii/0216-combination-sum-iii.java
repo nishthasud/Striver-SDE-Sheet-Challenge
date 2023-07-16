@@ -16,10 +16,10 @@ class Solution {
   {
     if(i==9)
     {
-      System.out.println("i="+i);
-      System.out.println("n="+n);
-      System.out.println(sum);
-      System.out.println(temp);
+     // System.out.println("i="+i);
+     // System.out.println("n="+n);
+     // System.out.println(sum);
+     // System.out.println(temp);
       if(temp.size()==k && sum==(-1*n))
       {
        // System.out.println("here");
