@@ -5,25 +5,25 @@ class Solution {
       int absX=x;
       if(x<0)
       {
-        System.out.println("Negative");
+       // System.out.println("Negative");
         if(Integer.MIN_VALUE==x)
         return 0;
         else
         {  
         absX=(x)*(-1);
-        System.out.println(absX);
+      //  System.out.println(absX);
         flag=1;
         }
       }
       
       String a=String.valueOf(absX);
-      System.out.println(a);
+      //System.out.println(a);
       char b[]=a.toCharArray();
       int start=0,end=b.length-1;
      while(start<=end)
      {
        char temp=b[start];
-       System.out.println("temp="+temp);
+      // System.out.println("temp="+temp);
       b[start]=b[end];
        b[end]=temp;
        start++;
@@ -33,7 +33,7 @@ class Solution {
      }
       String c=String.valueOf(b);
       int i=0;
-      System.out.println("c="+c);
+     // System.out.println("c="+c);
      while(c.charAt(i)==0)
      {
       
@@ -46,7 +46,7 @@ class Solution {
       
       if(flag!=1)
       {
-        System.out.println(temp);
+     //   System.out.println(temp);
         long test = Long.parseLong(temp);
     if (test > Integer.MAX_VALUE )
         
