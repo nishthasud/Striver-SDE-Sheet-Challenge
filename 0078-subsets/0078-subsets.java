@@ -1,7 +1,8 @@
 class Solution {
-  List<List<Integer>> ans=new ArrayList<>();
+ // List<List<Integer>> ans=new ArrayList<>();
     public List<List<Integer>> subsets(int[] nums) {
       List<Integer> temp=new ArrayList<>();
+       List<List<Integer>> ans=new ArrayList<>();
      helper(0,nums,ans,temp);
       return ans;
         
