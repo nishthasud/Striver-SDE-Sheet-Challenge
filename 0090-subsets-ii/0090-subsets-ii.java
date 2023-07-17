@@ -21,7 +21,7 @@ class Solution {
     {
       
       
-       Collections.sort(temp);
+     //  Collections.sort(temp);
      //  System.out.println("temp="+temp);
      //System.out.println("ans="+ans);
       if(ans.contains(temp)==false)
