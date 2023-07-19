@@ -13,32 +13,18 @@ class Solution {
   void helper(List<List<Integer>> ans, List<Integer> temp, int curr_idx,int nums[])
     
   {
-    //base condition
-    
-    
-    if(curr_idx==nums.length)
-      
-    {
-      
-      
-     //  Collections.sort(temp);
-     //  System.out.println("temp="+temp);
-     //System.out.println("ans="+ans);
-      if(ans.contains(temp)==false)
+    ans.add(new ArrayList<>(temp));
+    for(int i=curr_idx;i<nums.length;i++)
       {
-        ans.add(new ArrayList<>(temp));
-        
-        
-      }
-      return;
+      if(i>curr_idx && nums[i-1]==nums[i])
+        continue;
+      temp.add(nums[i]);
+      helper(ans,temp,i+1,nums);
+      temp.remove(temp.size()-1);
       
     }
     
-    helper(ans,temp,curr_idx+1,nums);
-    temp.add(nums[curr_idx]);
-    helper(ans,temp,curr_idx+1,nums);
-    temp.remove(temp.size()-1);
-  // helper(ans,temp,curr_idx+1,nums);
+    
     
     
   }
