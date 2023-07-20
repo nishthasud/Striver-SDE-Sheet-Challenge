@@ -20,7 +20,7 @@ class Solution {
          return;
        
        
-        else if(ans.contains(temp)==false && target==0)
+        else if( target==0)
          {  
          //  System.out.println("temp"+temp);
            ans.add(new ArrayList(temp));
