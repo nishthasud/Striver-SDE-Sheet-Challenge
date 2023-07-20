@@ -22,7 +22,7 @@ class Solution {
        
         else if(ans.contains(temp)==false && target==0)
          {  
-           System.out.println("temp"+temp);
+         //  System.out.println("temp"+temp);
            ans.add(new ArrayList(temp));
            
          }
