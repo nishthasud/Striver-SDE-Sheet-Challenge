@@ -16,8 +16,8 @@
 class Solution {
   int ans=0;
     public int diameterOfBinaryTree(TreeNode root) {
-        if(root==null)
-          return 0;
+        //if(root==null)
+        //  return 0;
       int a=getHt(root);
       return ans;
     }
