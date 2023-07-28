@@ -16,20 +16,20 @@
 class Solution {
   int ans=0;
     public int diameterOfBinaryTree(TreeNode root) {
-      if(root==null)
-        return 0;
+        if(root==null)
+          return 0;
       int a=getHt(root);
       return ans;
-        
     }
   
-  int getHt(TreeNode r)
+  int getHt(TreeNode root)
   {
-    if(r==null)
+    if(root==null)
       return 0;
-    int lst=getHt(r.left);
-    int rst=getHt(r.right);
+    int lst=getHt(root.left);
+    int rst=getHt(root.right);
     ans=Math.max(ans,lst+rst);
+    
     return 1+Math.max(lst,rst);
     
   }
