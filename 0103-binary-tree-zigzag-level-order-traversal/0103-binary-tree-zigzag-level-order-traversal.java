@@ -19,7 +19,7 @@ class Solution {
       if(root==null)
         return ans;
       Queue<TreeNode> q=new LinkedList<>();
-      int level=0;
+      int level=1;
       q.add(root);
       while(!q.isEmpty())
       {
@@ -39,13 +39,14 @@ class Solution {
          
           
         }
-       if(level%2!=0)
+       if(level%2==0)
        {
          Collections.reverse(interim);
          ans.add(interim);
        }
         else
         ans.add(interim);
+       
         level++;
         
               
