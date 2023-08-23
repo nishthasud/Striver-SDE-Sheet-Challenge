@@ -35,31 +35,13 @@ class Solution {
             first=cur_idx;
           if(i==sz-1)
             last=cur_idx;
-         
-          
-         // interim.add(temp.val);
-         // if(temp.left.left==null )
           if(temp.left!=null)
             q.add(new Pair(temp.left,2*cur_idx+1));
-          
           if(temp.right!=null)
             q.add(new Pair(temp.right,2*cur_idx+2));
-          
-          
-          
-         // if(temp.right.right==null)
-           // q.add(temp.right);
         }
-      //  System.out.println(interim);
-      //  ans=Math.max(ans,interim.size());
         ans=Math.max(ans,last-first+1);
-          
-          
-        
-        
-        
-        
-      }
+       }
       return ans;
     }
 }
