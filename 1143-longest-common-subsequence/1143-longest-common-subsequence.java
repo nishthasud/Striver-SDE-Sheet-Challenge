@@ -39,7 +39,7 @@ class Solution {
     }  
        
     // not match
-    dp[idx1][idx2]=0+Math.max(f(idx1-1,idx2,text1,text2,dp),f(idx1,idx2-1,text1,text2,dp));
+    dp[idx1][idx2]=Math.max(f(idx1-1,idx2,text1,text2,dp),f(idx1,idx2-1,text1,text2,dp));
     return dp[idx1][idx2];
     
     
